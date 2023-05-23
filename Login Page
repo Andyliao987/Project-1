@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<h2>Login Screen</h2>
+
+<form>
+  <label for="userName">Username:</label><br>
+  <input type="text" placeholder="Enter Username" id = "username"><br>
+  <label for="lastName">Password:</label><br>
+  <input type="text" placeholder="Enter Password" id = "password">
+  
+</form>
+
+<input type="submit" name = "" value = "Login" onclick = "valideate()">
+
+
+</div>
+<script>
+function valideate() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (username == "abc" && password == "123") {
+    alert("logged in");
+    window.location.href="cookie.html";
+    }
+else {
+    alert("did not login");
+
+    }
+}
+</script>
+
+
+</body>
+</html>
