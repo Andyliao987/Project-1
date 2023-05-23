@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript"
+		src=
+"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js">
+	</script>
+	<script type="text/javascript"
+		src=
+"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js">
+	</script> 
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+
+	
+	<body 
+	
+	<p id="name"></p><br
+	
+	<p id="address"></p>
+	
+	<div id="consolelog"></div>
+
+	<script>
+	
+	
+	
+	
+   var cookies = document.cookie
+    .split(';')
+    .map(cookie => cookie.split('='))
+    .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+    
+    console.log(cookies.name);
+    console.log(cookies.email);
+    console.log(cookies.address);
+    console.log(cookies.phone);
+    
+    
+	document.getElementById("name").innerHTML = "Name: " + cookies.name + " Email: " +cookies.email + " Address:" + cookies.address + " Phone: " + cookies.phone;
+	
+	
+    
+
+	</script>
+	
+	
+	
+	</body>
