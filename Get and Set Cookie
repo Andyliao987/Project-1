@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		ngCookie in Angular.js
+	</title>
+	<script type="text/javascript"
+		src=
+"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js">
+	</script>
+	<script type="text/javascript"
+		src=
+"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js">
+	</script>
+</head>
+
+<body>
+	
+	<h2>Account Settings</h2>
+
+	<script type="text/javascript">
+		var app = angular.module('cookieMonster', ['ngCookies']);
+
+		app.controller('CookieMaker',
+		function ($scope, $window, $cookies) {
+			$scope.SetCookies = function () {
+				$cookies.put('name', $scope.name);
+				$cookies.put('email', $scope.email);
+				$cookies.put('address', $scope.address);
+				$cookies.put('phone', $scope.phone);
+			};
+
+			$scope.GetCookies = function () {
+				$window.alert($cookies.get('name'));
+				$window.alert($cookies.get('email'));
+				$window.alert($cookies.get('address'));
+				$window.alert($cookies.get('phone'));
+			};
+		});
+	
+	</script>
+	<div ng-app="cookieMonster" ng-controller="CookieMaker">
+		<label for="address">Name:</label>
+		<input type="text" ng-model="name"/><br>
+		<label for="address">Email:</label>
+		<input type="text" ng-model="email"/><br>
+		<label for="address">Address:</label>
+		<input type="text" ng-model="address"/><br>
+		<label for="phone">Phone:</label>
+		<input type="text" ng-model="phone"/>
+		<br />
+		<br />
+		<input type="button"
+			value="Set Information"
+			ng-click="SetCookies()" />
+
+		<input type="button"
+			value="Get Information"
+			ng-click="GetCookies()" />
+	</div>
+</body>
+</html>
